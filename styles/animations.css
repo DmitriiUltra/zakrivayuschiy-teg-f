@@ -12,3 +12,100 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes indicator {
+  from {
+    translate: 0;
+  }
+
+  to {
+    translate: 4px;
+  }
+}
+
+/* не уверен, что так правильно, но решил все селекторы, которые
+  относятся к сердечку, лучше размечстить здесь, вместе с анимацией.
+  А, может, стоит другие транзишены сюда убрать?*/
+
+.like-icon-sparks {
+  opacity: 0;
+}
+
+.like-icon-core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .like-icon-core {
+  fill: var(--theme-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .like-icon-body {
+  fill: var(--theme-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .like-icon-core {
+  fill: var(--Like-icon-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .like-icon-body {
+  fill: var(--Like-icon-main-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .like-icon-core {
+  fill: var(--Like-icon-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .like-icon-body {
+  fill: var(--Like-icon-main-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon.is-liked .like-icon-contour {
+  fill: var(--Like-icon-main-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+@keyframes heart-scale {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s 0.1s ease-in-out alternate;
+  transform-origin: center;
+}
+
+@keyframes heart-sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.like-icon.is-liked .like-icon-sparks {
+  animation: heart-sparks 0.3s 0.3s ease-in-out alternate;
+}
+
+.like-icon .like-icon-contour {
+  fill: var(--theme-color);
+  transition: fill 0.1s linear;
+}

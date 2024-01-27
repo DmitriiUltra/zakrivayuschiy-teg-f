@@ -1,1 +1,23 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+  --content-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --main-font: "Inter-Variable", sans-serif;
+  --accent-font: "PressStart2P", serif;
+  --wdth-text: 400;
+  --wdth-title: 700;
+  --main-font-size: 18px;
+  --button-font-size: 14px;
+  --button-font-weight: 400;
+  --bj-color: #fff;
+  --theme-color: #000;
+  --button-hover-color: var(--bj-color);
+  --gradient-grid: #d3d3d3;
+  --gradient-filling-start: #e7e7e7;
+  --gradient-filling-end: #1a1a1a;
+  --Like-icon-sparks-color: red;
+  --Like-icon-main-color: red;
+  --border-width: 2px;
+  --border-style: solid;
+  --content-gap: 50px;
+}
