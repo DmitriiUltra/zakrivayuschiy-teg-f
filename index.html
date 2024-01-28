@@ -85,7 +85,7 @@
           </p>
         </div>
         <div class="card__button-box">
-          <button class="card__icon-button button">
+          <button class="card__icon-button button" type="button">
             <svg
               class="like-icon"
               width="39"
@@ -118,7 +118,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button button-effects">
+          <button class="card__like-button button button-effects" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -577,31 +577,31 @@
           </button>
         </div>
       </article>
+      <div class="save__box">
+        <button
+          type="button"
+          class="save__box__button button button-effects"
+          onclick="window['dialog-save'].showModal();"
+          aria-controls="dialog-save"
+        >
+          <svg class="save__box__button-svg" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy__svg"></use>
+          </svg>
+          <span class="button__text">Сохранить на&nbsp;память</span>
+        </button>
+        <dialog id="dialog-save" class="dialog__save">
+          <svg class="dialog__button-svg" viewBox="0 0 39 39">
+            <use href="./svg/floppy.svg#floppy__svg"></use>
+          </svg>
+          <p class="dialog__save-text">Вставьте дискету, чтобы продолжить</p>
+          <form class="dialog__form">
+            <button class="button dialog__button button-effects">
+              <span class="button__text">OK</span>
+            </button>
+          </form>
+        </dialog>
+      </div>
     </main>
-    <footer class="footer">
-      <button
-        type="button"
-        class="footer__button button button-effects"
-        onclick="window['dialog-save'].showModal();"
-        aria-controls="dialog-save"
-      >
-        <svg class="footer__button-svg" viewBox="0 0 39 39">
-          <use href="./svg/floppy.svg#floppy__svg"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-      <dialog id="dialog-save" class="dialog__save">
-        <svg class="dialog__button-svg" viewBox="0 0 39 39">
-          <use href="./svg/floppy.svg#floppy__svg"></use>
-        </svg>
-        <p class="dialog__save-text">Вставьте дискету, чтобы продолжить</p>
-        <form class="dialog__form">
-          <button class="button dialog__button button-effects">
-            <span class="button__text">OK</span>
-          </button>
-        </form>
-      </dialog>
-    </footer>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

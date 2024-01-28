@@ -3,7 +3,7 @@
 :root {
   --content-inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   --main-font: "Inter-Variable", sans-serif;
-  --accent-font: "PressStart2P", serif;
+  --accent-font: "PressStart2P", fantasy;
   --wdth-text: 400;
   --wdth-title: 700;
   --main-font-size: 18px;

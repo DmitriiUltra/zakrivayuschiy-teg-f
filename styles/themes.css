@@ -28,6 +28,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    
   :root {
     --wdth-text: 465;
     --wdth-title: 785;

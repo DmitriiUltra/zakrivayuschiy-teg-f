@@ -39,6 +39,7 @@
 }
 
 @supports (font-variation-settings: normal) {
+
   .page {
     font-family: var(--main-font, sans-serif);
   }
@@ -57,7 +58,7 @@
   inline-size: var(--content-inline-size);
   font-family: var(--accent-font);
   text-transform: uppercase;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 100px;
   background-color: var(--bj-color);
 }
 
@@ -99,7 +100,6 @@
   display: block;
   background-color: transparent;
   border: none;
-  background-color: transparent;
   cursor: pointer;
   color: var(--theme-color);
 }
@@ -109,11 +109,12 @@
   text-transform: uppercase;
   font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  /*transition: opacity 0.3s ease;*/
 }
 
 .theme-menu__button:focus {
@@ -124,7 +125,7 @@
 .theme-menu__button:disabled {
   pointer-events: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  /*transition: opacity 0.3s ease;*/
 }
 
 .theme-menu__button:disabled::before {
@@ -132,6 +133,7 @@
   display: block;
   position: absolute;
   inset-inline-start: -20px;
+  inset-block-start: 2;
   animation: indicator 0.5s ease-in-out infinite alternate;
 }
 
@@ -239,6 +241,7 @@
   (text-stroke: 1px var(--bj-color)) or
     (-webkit-text-stroke: 1px var(--bj-color))
 ) {
+
   .card__decor {
     -webkit-text-stroke: 1px var(--bj-color);
     text-stroke: 1px var(--bj-color);
@@ -266,7 +269,7 @@
 .card__icon-button {
   inline-size: 38px;
   block-size: 38px;
-  border: 2px solid transparent;
+  border: var(--border-width) var(--border-style) transparent;
   transition: border-color 0.3s ease;
   margin: 0;
   padding: 0;
@@ -278,7 +281,11 @@
 
 .card__icon-button:focus-visible {
   border-color: var(--theme-color);
-  box-shadow: 2px 2px 0px var(--theme-color);
+}
+
+.like-icon {
+  position: relative;
+  inset-inline-end: 2px;
 }
 
 .card__like-button {
@@ -331,14 +338,13 @@
   line-height: 90%;
 }
 
-.footer {
+.save__box {
   display: flex;
   justify-content: center;
   inline-size: 100%;
-  margin-top: 50px;
 }
 
-.footer__button {
+.save__box__button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,7 +356,7 @@
   padding: 15px;
 }
 
-.footer__button-svg {
+.save__box__button-svg {
   inline-size: 28px;
   aspect-ratio: 1/1;
 }
@@ -365,6 +371,7 @@
   /* inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
   Работает только так почему-то с медиазапросом */
   min-inline-size: 341px;
+  border: var(--border-width) var(--border-style) var(--theme-color);
   padding: 30px 40px;
 }
 
@@ -406,6 +413,7 @@
 }
 
 @media (375px < width) {
+
   .dialog__save {
     padding: 30px;
     inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
@@ -413,11 +421,12 @@
 }
 
 @media (1300px < width) {
-  .footer__button {
+
+  .save__box__button {
     flex-direction: row;
   }
 
-  .footer__button-svg {
+  .save__box__button-svg {
     inline-size: 21px;
   }
 }
